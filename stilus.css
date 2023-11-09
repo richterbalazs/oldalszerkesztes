@@ -1,0 +1,154 @@
+/* Reszponzív weboldal*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /* Minden html elem külső és belső margóját 0-ra tesszük */
+    box-sizing: border-box; /*elem szélességébe width értékbe bele tartozik a padding és a border is.*/
+}
+
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    background-image: url("kep/hatter.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+main {
+    /* Tároló, szülőelem */
+    display:grid;
+    grid-template-columns: 100px 3fr 1fr;
+    grid-template-areas:
+        "h h h"
+        "n n n"
+        "b a j"
+        "f f f";
+}
+
+/* Minden gyerekelemet elnevezek! Fontos hogy egy se maradjon ki! */
+
+header{
+    grid-area: h;
+    color: blue;
+}
+
+#focim {
+    color:blue
+}
+
+article#kozep {
+    max-width: 100%;
+}
+
+article {
+    grid-area: a;
+}
+
+nav {
+    grid-area: n;
+}
+
+footer {
+    grid-area: f;
+}
+
+aside#bal{
+    grid-area: b;
+}
+
+aside#jobb{
+    grid-area: j;
+}
+
+/* kepek */
+
+#baloldal {
+    max-width: 100%;
+}
+
+#kozep {
+    max-width: 100%;
+}
+
+#jobboldal {
+    max-width: 100%;
+}
+
+header, nav, article, footer, aside {
+    border: 1px solid whitesmoke;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+/* menü kialakítása */ 
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    background-color: rgb(40, 76, 153);
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: yellow;
+}
+
+/* TABLET nézet - reszponzivítás kialakítása */
+
+@media only screen and (max-width: 700px) {/* töréspont */
+    body, main {
+        /* background-color: lightblue; */
+        width: 100%;
+      }
+      main {
+
+          background-color: purple;
+          /* Tároló, szülőelem */
+          display:grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+              "h h"
+              "n n"
+              "a b"
+              "j j"
+              "f f";
+      }
+    }
+
+/* MOBIL nézet - reszponzívitás kialakítása! */
+
+@media only screen and (max-width: 450px) {/* töréspont */
+    body, main {
+      /* background-color: lightblue; */
+      width: 100%;
+    }
+    main {
+        font-size:12px+20vw;
+        background-color: purple;
+        /* Tároló, szülőelem */
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "n"
+            "a"
+            "b"
+            "j"
+            "f";
+    }
+    nav ul{
+
+        grid-template-columns: 1fr;
+        gap: 0px;
+        
+    }
+  }
