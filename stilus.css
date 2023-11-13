@@ -36,7 +36,7 @@ header{
 }
 
 #focim {
-    color:blue
+    color:lightcyan
 }
 
 article#kozep {
@@ -53,6 +53,7 @@ nav {
 
 footer {
     grid-area: f;
+    text-align: center;
 }
 
 aside#bal{
@@ -65,16 +66,40 @@ aside#jobb{
 
 /* kepek */
 
-#baloldal {
-    max-width: 100%;
+div#elso{
+    grid-area: e;
 }
 
-#kozep {
-    max-width: 100%;
+div#masodik{
+    grid-area: m;
 }
 
-#jobboldal {
-    max-width: 100%;
+div#harmadik{
+    grid-area: ha;
+}
+
+div#elso{
+    border: 1px solid white;
+}
+
+div#masodik{
+    border: 1px solid white;
+}
+
+div#harmadik{
+    border: 1px solid white;
+}
+
+img{
+    width: 100%;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "e m ha";
+    
 }
 
 header, nav, article, footer, aside {
@@ -111,7 +136,9 @@ nav a {
       }
       main {
 
-          background-color: purple;
+        background-image: url("kep/hatter.jpg");
+        background-position: center;
+        background-size: cover;
           /* Tároló, szülőelem */
           display:grid;
           grid-template-columns: 1fr 1fr;
@@ -132,7 +159,7 @@ nav a {
       width: 100%;
     }
     main {
-        font-size:12px+20vw;
+        font-size:12px;
         background-color: purple;
         /* Tároló, szülőelem */
         display:grid;
